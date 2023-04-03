@@ -1,0 +1,34 @@
+<div class="home">
+  <!-- Exemplo de redirecionamento [routerLink] para o componente listagem-produto -->
+  <app-card
+    [tituloCard]="'Ver produtos'"
+    [icone]="'playlist_add'"
+    [routerLink]="['/listagem-produto']"
+  ></app-card>
+
+  <!-- Exemplo de redirecionamento [routerLink] para uma rota que não existe no contexto do home.component -->
+  <app-card
+    [tituloCard]="'Produto Detalhe'"
+    [icone]="'playlist_add'"
+    (cardSelecionado)="clickCard($event)"
+  ></app-card>
+  
+  <!-- Exemplo de redirecionamento [routerLink] para uma rota que não existe no contexto do home.component -->
+  <app-card
+    [tituloCard]="'Entre em contato'"
+    [icone]="'connect_without_contact'"
+    (cardSelecionado)="clickCard($event)"
+  ></app-card>
+
+  <!-- Exemplo de redirecionamento [routerLink] para o componente detalhe-produto, dentro do contexto do listagem-produto -->
+  <app-card
+    [tituloCard]="'Sobre nós'"
+    [icone]="'assignment_ind'"
+    (cardSelecionado)="clickCard($event)"
+    [routerLink]="['/listagem-produto', 'detalhe-produto', 'sobre-nos']"
+  ></app-card>
+
+  <div class="conselho">
+    <span> {{ slip?.advice }} </span>
+  </div>
+</div>
